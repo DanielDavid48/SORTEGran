@@ -93,7 +93,7 @@ input {
 
 #vencedor {
     margin-top: 0;
-    font-size: 3.5rem;
+    font-size: 3vh;
     font-weight: bold;
     color: rgb(241, 0, 0);
 }
