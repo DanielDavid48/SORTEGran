@@ -1,7 +1,11 @@
 $('#sortear').click(async function(){
     let link = $('#link').val();
     if (link == '') {
-        modal();
+        modal('Informe o link do post do Instagram!');
+        return;
+    }
+    if (!validarLinkPostInstagram(link)) {
+        modal('O link informado não é de um post do Instagram!');
         return;
     }
     let ganhador = "@danieldavid4889"
@@ -24,10 +28,10 @@ $('#sortear').click(async function(){
     $('.sorteador').removeClass('hide').addClass('show');
 });
 
-function modal(){
+function modal(msg){
     Swal.fire({
         title: 'Ops!',
-        text: 'Preencha o campo com o link do post do sorteio!',
+        text: msg,
         icon: 'error',
         confirmButtonText: 'Ok',
         confirmButtonColor: '#ff0000',
@@ -38,3 +42,11 @@ $('#link').on('input', function() {
     $('.sorteador').removeClass('show').addClass('hide');
     $('#sortear').html('Sortear');
 });
+
+function validarLinkPostInstagram(link){
+    if (link.indexOf('instagram.com/p/') > -1) {
+        return true;
+    } else {
+        return false;
+    }
+}
