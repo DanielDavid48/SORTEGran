@@ -9,13 +9,13 @@ $('#sortear').click(async function(){
         return;
     }
     let ganhador = "@danieldavid4889"
-    let totalComentarios = 1300;
+    let totalComentarios = 1497;
     // add a span into button
     $('#sortear').html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Sorteando [ @naipesportivo ]...');
     $('#link').attr('disabled', true);
     $('#sortear').attr('disabled', true);
     // wait for 1 minute
-    await new Promise(r => setTimeout(r, 6000));
+    await new Promise(r => setTimeout(r, 15000));
     
     // remove span from button
     $('#sortear').html('Feito!');
